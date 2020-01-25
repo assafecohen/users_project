@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './User.css';
 import Button from 'react-bootstrap/Button';
 
-function User({ data, deleteUser }) {
+function User({ data, deleteUser, editUser }) {
   let {
     avatar,
     email,
@@ -27,7 +27,9 @@ function User({ data, deleteUser }) {
       <div>{email}</div>
       <div>{phone_number}</div>
       <div>
-        <Button variant='warning'>Edit</Button>
+        <Button variant='warning' onClick={() => editUser(data)}>
+          Edit
+        </Button>
       </div>
     </div>
   );

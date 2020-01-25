@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Users.css';
 import User from './User/User';
 import ModalDelete from './ModalDelete/ModalDelete';
+import ModalEdit from './ModalEdit/ModalEdit';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -14,9 +15,20 @@ const Users = () => {
   const [currentUser, setCurrentUser] = useState('');
 
   const [modalEditlStatus, setModalEditStatus] = useState(false);
-  //
-  //
-  //
+  const handleOpenEditModal = userData => {
+    setModalEditStatus(true);
+    setCurrentUser(userData);
+  };
+  const handleCloseEditModal = () => {
+    setModalEditStatus(false);
+    setCurrentUser('');
+  };
+  const handleEditUser = userData => {
+    const { id } = userData;
+    const updatedUsers = users.map(user => (user.id !== id ? user : userData));
+    setUsers(updatedUsers);
+    setModalEditStatus(false);
+  };
 
   const [modalDeleteStatus, setModalDeleteStatus] = useState(false);
   const handleOpenDeleteModal = userData => {
@@ -38,7 +50,12 @@ const Users = () => {
 
   const usersArray = users.map(user => {
     return (
-      <User deleteUser={handleOpenDeleteModal} key={user.id} data={user} />
+      <User
+        deleteUser={handleOpenDeleteModal}
+        editUser={handleOpenEditModal}
+        key={user.id}
+        data={user}
+      />
     );
   });
   return (
@@ -49,6 +66,12 @@ const Users = () => {
         hideModal={handleCloseDeleteModal}
         userData={currentUser}
         handleDeleteUser={handleDeleteUser}
+      />
+      <ModalEdit
+        modalStatus={modalEditlStatus}
+        userData={currentUser}
+        hideModal={handleCloseEditModal}
+        handleEditUser={handleEditUser}
       />
     </Fragment>
   );
