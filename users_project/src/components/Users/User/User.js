@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './User.css';
 
-function User({ data }) {
+function User({ data, deleteUser }) {
   let {
     avatar,
     email,
@@ -12,8 +13,23 @@ function User({ data }) {
     last_name,
     phone_number
   } = data;
-  console.log(email);
-  return <div></div>;
+
+  return (
+    <div className='User'>
+      <div>
+        <img src={avatar} alt='avatar' />
+      </div>
+      <div className='User_name'>{first_name}</div>
+      <div>
+        <button onClick={() => deleteUser(id)}>Delete</button>
+      </div>
+      <div>{email}</div>
+      <div>{phone_number}</div>
+      <div>
+        <button>Edit</button>
+      </div>
+    </div>
+  );
 }
 
 User.propTypes = {};

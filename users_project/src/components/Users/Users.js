@@ -13,9 +13,17 @@ class Users extends Component {
       .then(response => response.json())
       .then(data => this.setState({ users: data }));
   }
+  handleDeleteUser = id => {
+    let users = this.state.users.filter(user => {
+      return user.id !== id ? user : null;
+    });
+    this.setState({ users });
+  };
   render() {
     const users = this.state.users.map(user => {
-      return <User data={user} />;
+      return (
+        <User deleteUser={this.handleDeleteUser} key={user.id} data={user} />
+      );
     });
     return <div className='Users'>{users}</div>;
   }
