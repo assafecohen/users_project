@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './PageNotFound.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +19,5 @@ class PageNotFound extends Component {
     );
   }
 }
-
-PageNotFound.propTypes = {};
 
 export default PageNotFound;

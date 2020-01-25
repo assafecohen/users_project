@@ -14,8 +14,8 @@ function App() {
       <div style={{ marginTop: '60px', height: '100%' }}>
         <Switch>
           <Route path='/' exact component={Users}></Route>
-          <Route path='/about' exact component={About}></Route>
-          <Route path='/contact' exact component={Contact}></Route>
+          <Route path='/about' component={About}></Route>
+          <Route path='/contact' component={Contact}></Route>
           <Route component={PageNotFound}></Route>
         </Switch>
       </div>

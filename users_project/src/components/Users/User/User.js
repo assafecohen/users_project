@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './User.css';
+import Button from 'react-bootstrap/Button';
 
 function User({ data, deleteUser }) {
   let {
@@ -21,12 +22,12 @@ function User({ data, deleteUser }) {
       </div>
       <div className='User_name'>{first_name}</div>
       <div>
-        <button onClick={() => deleteUser(id)}>Delete</button>
+        <Button onClick={() => deleteUser(data)}>Delete</Button>
       </div>
       <div>{email}</div>
       <div>{phone_number}</div>
       <div>
-        <button>Edit</button>
+        <Button variant='warning'>Edit</Button>
       </div>
     </div>
   );
