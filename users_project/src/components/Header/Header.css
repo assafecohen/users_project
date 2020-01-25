@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Montaga&display=swap');
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #24252a;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.Header_navlinks ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+li,
+a {
+  font-family: 'Monstserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.Header_logo {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  margin-right: auto;
+}
+
+.Header_navlinks li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.Header_navlinks li a {
+  transition: all 0.3s ease 0s;
+}
+.Header_navlinks li a:hover {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #0088a9;
+}

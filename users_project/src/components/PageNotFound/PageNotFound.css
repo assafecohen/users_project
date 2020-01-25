@@ -1,0 +1,24 @@
+.PageNotFound {
+  background: rgb(91, 154, 190);
+  height: 100%;
+  text-align: center;
+}
+
+.PageNotFound h2 {
+  position: relative;
+  top: 20%;
+  font-size: 220px;
+}
+
+.PageNotFound div {
+  position: relative;
+  top: 20%;
+}
+
+.PageNotFound a {
+  font-size: 32px;
+  color: #ccefeb;
+}
+.PageNotFound a:hover {
+  color: #07d4bc;
+}
